@@ -9,8 +9,25 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # List the first level UI elements here 
-    fluidPage(
-      h1("KG4All")
+    navbarPage(
+      theme = shinythemes::shinytheme("flatly"),
+      title = "Knowledge Graph 4 All",id = "kg4all",
+      # Brazil Monitor Tab ------------------------------------------------------
+      tabPanel(
+        title = "Monitor Brasil",
+        mod_covid19_ui("covid19_ui_1")
+        
+      ),
+      # About Tab ---------------------------------------------------------------
+      tabPanel("Sobre esta Aplicacao",
+               tags$div(
+                 #tags$h4("Codigo Fonte:"),
+                 #tags$a(href="https://github.com/viniciusmsousa/Covid19-Monitor","github.com/viniciusmsousa"),
+                 tags$h4("Contato:"),
+                 "vinisousa04@gmail.com ou via ", tags$a(href="https://www.linkedin.com/in/viniciusmsousa/","linkedin"),
+                 tags$br()
+               )
+      )
     )
   )
 }

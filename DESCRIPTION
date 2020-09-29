@@ -1,12 +1,8 @@
 Package: KG4All
-Title: An Amazing Shiny App
+Title: Knowledge Graphs 4 All
 Version: 0.0.0.9000
-Authors@R: 
-    person(given = "firstname",
-           family = "lastname",
-           role = c("aut", "cre"),
-           email = "your@email.com")
-Description: What the package does (one paragraph).
+Authors@R: person('Vinicius', 'Melquiades de Sousa', email = 'vinisousa04@gmail.com', role = c('cre', 'aut'))
+Description: PKG_DESC.
 License: What license is it under?
 Imports: 
     config,
@@ -15,4 +11,4 @@ Imports:
     htmltools
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1

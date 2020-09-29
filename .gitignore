@@ -44,3 +44,5 @@ docs/
 # translation temp files
 po/*~
 dev/
+renv/
+.Rprofile
