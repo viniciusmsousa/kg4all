@@ -45,3 +45,6 @@ docs/
 po/*~
 renv/
 .Rprofile
+
+# Custom files
+dev/datasets
