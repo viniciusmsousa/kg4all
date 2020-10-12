@@ -7,14 +7,14 @@
 app_ui <- function(request) {
   tagList(
     # Leave this function for adding external resources
-    golem_add_external_resources(),
+    # golem_add_external_resources(),
     # List the first level UI elements here 
     navbarPage(
       theme = shinythemes::shinytheme("flatly"),
       title = "Knowledge Graph 4 All",id = "kg4all",
       # Brazil Monitor Tab ------------------------------------------------------
       tabPanel(
-        title = "Monitor Brasil",
+        title = "Covid-19 Knowledge Graph",
         mod_covid19_ui("covid19_ui_1")
         
       ),

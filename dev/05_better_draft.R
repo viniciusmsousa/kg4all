@@ -71,7 +71,7 @@ triplets %>%
   group_by(head_cui,relation_tui,tail_cui) %>% 
   add_count() %>% 
   ungroup() %>% 
-  rename(relation_count=n) -> kg2
+  rename(relation_count=n) -> kg
 
 View(kg2)
 # nodes data frame --------------------------------------------------------
@@ -125,12 +125,18 @@ kg %>%
 edges %>% 
   count(from)
 
+
+kg %>% 
+  filter(
+    title=='COVID-19 and water'
+  ) %>% 
+  select(head_cui) %>% 
+  distinct() %>% 
+  unlist -> cuis
+
 (
   edges %>% 
-    filter(from%in%c(
-      # 'C0001175',
-      'C0001311'
-    )) %>%
+    filter(from%in%cuis) %>%
     mutate(count=count/100) %>% 
     rename(value=count,label=type)-> arestas
 )
@@ -149,9 +155,11 @@ visNetwork(
   visGroups(groupname = "Disease or Syndrome", color = "darkblue", shape = "square", 
             shadow = list(enabled = TRUE)) %>% 
   visLegend() %>% 
-  visInteraction(dragNodes = FALSE, 
-                 dragView = FALSE, 
-                 zoomView = FALSE)
+  visPhysics(solver = "forceAtlas2Based", 
+             forceAtlas2Based = list(gravitationalConstant = -50))
+  # visInteraction(dragNodes = F, 
+  #                dragView = F, 
+  #                zoomView = T)
 
 
 visNetwork(nos, arestas, height = "500px") %>%
