@@ -40,10 +40,10 @@ mod_covid19_ui <- function(id){
             br(),
             uiOutput(outputId = ns("selected_document")) %>% 
               shinycssloaders::withSpinner(color = loader_color),
-            visNetwork::visNetworkOutput(outputId = ns('network_graph')),
             br(),
             DT::DTOutput(outputId = ns('document_relations')),
-            br()
+            br(),
+            visNetwork::visNetworkOutput(outputId = ns('network_graph'))
           ),
           # entity view ui ----------------------------------------------------------
           tabPanel(

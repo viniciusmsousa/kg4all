@@ -5,9 +5,9 @@ account: viniciusmsousa
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2997917
-bundleId: 3731655
+bundleId: 3731867
 url: https://viniciusmsousa.shinyapps.io/KG4All/
-when: 1602535075.33662
+when: 1602538710.85018
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: .Rprofile
